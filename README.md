@@ -37,11 +37,11 @@
 
   ```java
   allprojects {
-  		repositories {
-  			...
-  			maven { url 'https://jitpack.io' }
-  		}
+  	repositories {
+  		...
+  		maven { url 'https://jitpack.io' }
   	}
+  }
   ```
 
 + Step2 Add the dependency.
@@ -73,6 +73,15 @@
               String result = bundle.getString(CaptureActivity.EXTRA_SCAN_RESULT);
               tv_scanResult.setText("扫描结果：" + result);
           }
+      }
+  }
+  ```
+
++ Step5 Add follow codes in app build.gradle inner android label. Otherwise you can not load .so files.
+  ```java
+  sourceSets {
+      main {
+          jniLibs.srcDirs = ['libs']
       }
   }
   ```
