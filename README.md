@@ -33,4 +33,46 @@
 
 ### 使用方式
 
-待续.... 今天下班了
++ Step1 Add it in your root build.gradle at the end of repositories.
+
+  ```java
+  allprojects {
+  		repositories {
+  			...
+  			maven { url 'https://jitpack.io' }
+  		}
+  	}
+  ```
+
++ Step2 Add the dependency.
+
+  ```java
+  dependencies {
+  		implementation 'com.github.MZCretin:ScanCode:latest_version'
+  }
+  ```
+
++ Step3 Open scan activity wherever you want.
+  ```java
+  ScanConfig config = new ScanConfig()
+                  .setShowFlashlight(true)//是否需要打开闪光灯
+                  .setShowGalary(true)//是否需要打开相册
+                  .setNeedRing(true);//是否需要提示音
+  //ScanConfig 也可以不配置 默认都是打开
+  CaptureActivity.launch(this, config);
+  ```
+
++ Step4 Receive the result on the 'onActivityResult' in activity or fragment.
+  ```java
+  if (requestCode == CaptureActivity.REQUEST_CODE_SCAN) {
+      // 扫描二维码回传
+      if (resultCode == RESULT_OK) {
+          if (data != null) {
+              //获取扫描结果
+              Bundle bundle = data.getExtras();
+              String result = bundle.getString(CaptureActivity.EXTRA_SCAN_RESULT);
+              tv_scanResult.setText("扫描结果：" + result);
+          }
+      }
+  }
+  ```

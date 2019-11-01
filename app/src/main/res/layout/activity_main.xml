@@ -4,41 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/tv_scanResult"
+        android:id="@+id/btn_scan_in_activity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:gravity="left"
-        android:padding="16dp"
-        android:text="扫描结果展示：" />
-
-    <CheckBox
-        android:id="@+id/cb_flashlight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:text="是否需要打开闪光灯" />
-
-    <CheckBox
-        android:id="@+id/cb_grlary"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:text="是否需要打开相册" />
-
-    <CheckBox
-        android:id="@+id/cb_tips"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:text="是否需要打开提示音" />
+        android:layout_gravity="center"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="#C0B9B9"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="  在 Activity 中扫码  "
+        android:textColor="#ffffff" />
 
     <TextView
-        android:id="@+id/btn_scan"
+        android:id="@+id/btn_scan_in_fragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -48,7 +32,7 @@
         android:background="#C0B9B9"
         android:gravity="center"
         android:padding="10dp"
-        android:text="  立 即 扫 码  "
+        android:text="  在 Fragment 中扫码  "
         android:textColor="#ffffff" />
 
 </LinearLayout>
