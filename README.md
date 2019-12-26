@@ -35,6 +35,8 @@
 
 ### 使用方式
 
++ 特别说明：如果你需要用到x64的so库，用v2.0.0版本，此版本包比较大，否则用v1.0.0版本
+
 + Step1 Add it in your root build.gradle at the end of repositories.
 
   ```java
