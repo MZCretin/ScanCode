@@ -1,4 +1,4 @@
-package com.cretin.tools.scancode;
+package com.cretin.tools.scancode.utils;
 
 import android.content.Context;
 import android.content.res.AssetFileDescriptor;

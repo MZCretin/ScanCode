@@ -2,17 +2,14 @@ package com.cretin.scancode;
 
 import android.content.Intent;
 import android.support.annotation.Nullable;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.cretin.tools.scancode.CaptureActivity;
-import com.cretin.tools.scancode.ScanConfig;
+import com.cretin.tools.scancode.config.ScanConfig;
 
 public class DemoInActivity extends AppCompatActivity implements View.OnClickListener {
 

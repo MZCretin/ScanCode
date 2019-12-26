@@ -1,4 +1,4 @@
-package com.cretin.tools.scancode;
+package com.cretin.tools.scancode.config;
 
 import android.os.Parcel;
 import android.os.Parcelable;
