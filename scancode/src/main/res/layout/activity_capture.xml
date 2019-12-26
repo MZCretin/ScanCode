@@ -2,119 +2,49 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
-    <SurfaceView
-        android:id="@+id/capture_preview"
+    <cn.bingoogolapple.qrcode.zbar.ZBarView
+        android:id="@+id/zbarview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        app:qrcv_animTime="1000"
+        app:qrcv_barCodeTipText="将条码放入框内，即可自动扫描"
+        app:qrcv_barcodeRectHeight="120dp"
+        app:qrcv_borderColor="@android:color/white"
+        app:qrcv_borderSize="1dp"
+        app:qrcv_cornerLength="20dp"
+        app:qrcv_cornerSize="3dp"
+        app:qrcv_isAutoZoom="true"
+        app:qrcv_isBarcode="false"
+        app:qrcv_isOnlyDecodeScanBoxArea="false"
+        app:qrcv_isShowDefaultGridScanLineDrawable="true"
+        app:qrcv_isShowDefaultScanLineDrawable="true"
+        app:qrcv_isShowLocationPoint="true"
+        app:qrcv_isShowTipBackground="true"
+        app:qrcv_isShowTipTextAsSingleLine="false"
+        app:qrcv_isTipTextBelowRect="false"
+        app:qrcv_maskColor="#33FFFFFF"
+        app:qrcv_qrCodeTipText="将二维码/条码放入框内，即可自动扫描"
+        app:qrcv_rectWidth="220dp"
+        app:qrcv_topOffset="180dp"
+        app:qrcv_verticalBias="-1" />
 
-    <RelativeLayout
-        android:id="@+id/capture_container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/tv_flash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="400dp"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_vertical"
+        android:drawableTop="@mipmap/scan_sys_dianliang"
+        android:drawablePadding="5dp"
+        android:padding="15dp"
+        android:text="轻触点亮"
+        android:textColor="#ffffff"
+        android:textSize="13sp" />
 
-        <ImageView
-            android:id="@+id/capture_mask_top"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_alignParentTop="true"
-            android:background="@drawable/scan_shadow" />
-
-        <RelativeLayout
-            android:id="@+id/capture_crop_view"
-            android:layout_width="250dp"
-            android:layout_height="250dp"
-            android:layout_below="@id/capture_mask_top"
-            android:layout_centerHorizontal="true"
-            android:background="@drawable/scan_qr_code_bg">
-
-            <ImageView
-                android:id="@+id/capture_scan_line"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:src="@drawable/scan_line"
-                android:visibility="visible" />
-
-        </RelativeLayout>
-
-        <ImageView
-            android:id="@+id/capture_mask_bottom"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/capture_crop_view"
-            android:layout_alignParentBottom="true"
-            android:background="@drawable/scan_shadow" />
-
-        <ImageView
-            android:id="@+id/capture_mask_left"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_above="@id/capture_mask_bottom"
-            android:layout_below="@id/capture_mask_top"
-            android:layout_alignParentLeft="true"
-            android:layout_toLeftOf="@id/capture_crop_view"
-            android:background="@drawable/scan_shadow" />
-
-        <ImageView
-            android:id="@+id/capture_mask_right"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_above="@id/capture_mask_bottom"
-            android:layout_below="@id/capture_mask_top"
-            android:layout_alignParentRight="true"
-            android:layout_toRightOf="@id/capture_crop_view"
-            android:background="@drawable/scan_shadow" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/capture_crop_view"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="16dp"
-            android:text="请将二维码/条形码放入扫描框内"
-            android:textColor="#ffffff"
-            android:textSize="13sp" />
-
-        <TextView
-            android:id="@+id/tv_flash"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/capture_crop_view"
-            android:layout_centerHorizontal="true"
-            android:layout_gravity="center_vertical"
-            android:layout_marginTop="-70dp"
-            android:drawableTop="@mipmap/scan_sys_dianliang"
-            android:drawablePadding="5dp"
-            android:padding="15dp"
-            android:text="轻触点亮"
-            android:textColor="#ffffff"
-            android:textSize="13sp" />
-
-        <LinearLayout
-            android:id="@+id/scan_ll_galary_container"
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:layout_alignParentBottom="true"
-            android:background="#4D000000"
-            android:gravity="center">
-
-            <TextView
-                android:id="@+id/tv_galary"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:drawableTop="@mipmap/scan_sys_xc"
-                android:drawablePadding="5dp"
-                android:padding="15dp"
-                android:text="相册"
-                android:textColor="#ffffff"
-                android:textSize="13sp" />
-
-        </LinearLayout>
-    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -141,6 +71,27 @@
                 android:textSize="20sp" />
 
         </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/scan_ll_galary_container"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:background="#4D000000"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tv_galary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@mipmap/scan_sys_xc"
+            android:drawablePadding="5dp"
+            android:padding="15dp"
+            android:text="相册"
+            android:textColor="#ffffff"
+            android:textSize="13sp" />
+
     </LinearLayout>
 
 </RelativeLayout>

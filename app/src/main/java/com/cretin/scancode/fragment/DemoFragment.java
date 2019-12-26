@@ -12,10 +12,9 @@ import android.widget.TextView;
 
 import com.cretin.scancode.R;
 import com.cretin.tools.scancode.CaptureActivity;
-import com.cretin.tools.scancode.config.ScanConfig;
+import com.cretin.tools.scancode.ScanConfig;
 
 import static android.app.Activity.RESULT_OK;
-import static com.cretin.tools.scancode.CaptureActivity.REQUEST_CODE_SCAN;
 
 /**
  * A simple {@link Fragment} subclass.

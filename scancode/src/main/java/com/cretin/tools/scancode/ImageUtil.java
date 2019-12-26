@@ -14,7 +14,7 @@
 ********************************End of Head************************************\
 */
 
-package com.cretin.tools.scancode.utils;
+package com.cretin.tools.scancode;
 
 import android.annotation.TargetApi;
 import android.content.ContentUris;
